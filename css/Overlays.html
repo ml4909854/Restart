@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlays</title>
+</head>
+<style>
+    .container {
+        width: 200px;
+        position: relative;
+        height: 210px;
+        box-sizing: border-box;
+    }
+
+    .image {
+        width: 200px;
+        height: 210px;
+        position: absolute;
+        top: 0px;
+        box-sizing: border-box;
+    }
+    .middle{
+        width: 200px;
+        height: 210px;
+        position: absolute;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: rgb(95, 168, 201);
+        transition: all 0.8s ease-in-out;
+        opacity: 0;
+    }
+    .middle:hover{
+        opacity: inherit;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <img class="image" src="https://www.w3schools.com/css/img_avatar.png" alt="">
+    </div>
+    <div class="middle">
+        <p>Hello World!</p>
+    </div>
+</body>
+
+</html>
