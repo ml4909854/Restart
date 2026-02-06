@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Query</title>
+
+<style>
+    div{
+        width: 1000px;
+        height: 400px;
+        background-color: red; /* default */
+    }
+
+    /* Small screens */
+    @media screen and (max-width: 800px) {
+        div{
+            background-color: blue;
+        }
+    }
+
+    /* Large screens */
+    @media screen and (min-width: 1000px) {
+        div{
+            background-color: yellow;
+        }
+    }
+
+    @media screen and (min-width: 800px) and (max-width: 1000px) {
+    div{
+        background-color: green;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <div></div>
+</body>
+</html>
