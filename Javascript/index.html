@@ -1,17 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
-    <div id="container">
 
-    </div>
-    <script src="Async.js">
-    
-    </script>
+<style>
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Login button */
+#button {
+    padding: 12px 25px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* MODAL CONTAINER (overlay) */
+#formContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    display: none; /* IMPORTANT */
+    justify-content: center;
+    align-items: center;
+}
+
+/* MODAL BOX */
+.form {
+    background-color: white;
+    padding: 25px;
+    width: 300px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Inputs */
+.form input {
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Close icon */
+#icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+</style>
+
+<body>
+
+    <section>
+        <div class="btn">
+            <button id="button">Login</button>
+        </div>
+        <div id="formContainer">
+            <div id="icon">
+                <img src="" alt="icon">
+            </div>
+            <form class="form">
+                <input type="email" placeholder="Enter your Email">
+                <input type="text" placeholder="Enter your password">
+            </form>
+
+        </div>
+    </section>
+   <script>
+    const button = document.getElementById("button");
+    const formContainer = document.getElementById("formContainer");
+    const icon = document.getElementById("icon");
+    const form = document.querySelector(".form");
+
+    // Open modal
+    button.addEventListener("click", () => {
+        formContainer.style.display = "flex";
+    });
+
+    // Close on cross icon
+    icon.addEventListener("click", () => {
+        formContainer.style.display = "none";
+    });
+
+    // Close when clicking outside modal
+    formContainer.addEventListener("click", (e) => {
+        if (!form.contains(e.target)) {
+            formContainer.style.display = "none";
+        }
+    });
+</script>
+
 </body>
+
 </html>
