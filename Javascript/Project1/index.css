@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: #ede0d4;
+}
+
+/* ================= NAVBAR ================= */
+
+.navContainer {
+    width: 100%;
+    padding: 18px 40px;
+    background-color: #656d4a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.navContainer > ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.navContainer > ul > li {
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* underline hover effect */
+.navContainer > ul > li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: #ede0d4;
+    transition: width 0.3s ease;
+}
+
+.navContainer > ul > li:hover {
+    color: #ede0d4;
+}
+
+.navContainer > ul > li:hover::after {
+    width: 100%;
+}
+
+/* ================= MAIN GRID ================= */
+
+.section {
+    padding: 30px;
+}
+
+#mainContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+#mainContainer > div {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* hover animation */
+#mainContainer > div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ================= IMAGE ================= */
+
+#mainContainer > div > img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* ================= TEXT ================= */
+
+#mainContainer > div p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+#mainContainer > div p:first-of-type {
+    font-weight: 600;
+    font-size: 15px;
+    color: #222;
+}
+
+#mainContainer > div p:last-of-type {
+    font-weight: bold;
+    color: #656d4a;
+    font-size: 16px;
+}
