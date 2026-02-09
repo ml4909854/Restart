@@ -1,6 +1,9 @@
 import React, { Suspense , lazy } from 'react'
 import Heading from './Heading'
 import CreateContext from './CreateContext/CreateContext'
+import UseState from './UseState'
+import UseEffect from './UseEffect'
+import UseCallback from './useCallback'
 
 const Content = lazy(()=>import("./Content"))
 
@@ -12,7 +15,10 @@ const App = () => {
    <Suspense fallback={<div>Loading....</div>}>
    <Content/>
    </Suspense> */}
-  <CreateContext/>
+  {/* <CreateContext/> */}
+  {/* <UseState/> */}
+  {/* <UseEffect/> */}
+  <UseCallback/>
    </>
   )
 }
