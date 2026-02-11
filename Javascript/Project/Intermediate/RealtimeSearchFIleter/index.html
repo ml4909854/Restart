@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time Filter</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <div id="container">
+
+    </div>
+    <script>
+
+
+        const searchInput = document.getElementById("input")
+        const container = document.getElementById("container")
+
+        async function Fetchdata() {
+            let response = await fetch("https://jsonplaceholder.typicode.com/todos")
+            let data = await response.json()
+            showData(data)
+            RealTimeInput(data)
+
+        }
+        function showData(data) {
+            container.innerHTML = ""
+            data.forEach(element => {
+                let p = document.createElement("p")
+                p.innerHTML = element.title
+                container.append(p)
+            });
+
+
+        }
+
+        function RealTimeInput(data) {
+
+            searchInput.addEventListener("input", () => {
+                let value = searchInput.value.toLowerCase()
+
+                const filteredData = data.filter(item =>
+                    item.title.toLowerCase().includes(value)
+                )
+                showData(filteredData)
+
+            })
+        }
+
+        Fetchdata()
+    </script>
+</body>
+
+</html>
