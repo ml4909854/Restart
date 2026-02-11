@@ -10,14 +10,8 @@
         <textarea placeholder="write some text here" id="textArea" maxlength="50"></textarea>
          <p id="count"></p>
     </div>
-    <script>
-        const textArea = document.getElementById("textArea")
-        const count = document.getElementById("count")
-
-        textArea.addEventListener("input" , (e)=>{
-            let len = e.target.value
-            count.innerText = `Total Count ${len.length}`
-        })
+    <script src="index.js">
+       
     </script>
 </body>
 </html>
