@@ -1,0 +1,14 @@
+
+// those user are not registerd
+// they are also able to get the private data 
+// i have to resolve this problem to add a fake token
+// not a jwt token
+
+// if a send a token like = abc.
+// if somebody get my token 
+// its a very easy token 
+// it is avaiable for everybody easily
+// somebody can manipulate paricular 
+// people data.
+
+// we have to jwt token
